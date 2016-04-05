@@ -1,0 +1,27 @@
+{
+  "name": "ds-demo-trello-provider",
+  "version": "1.0.0",
+  "description": "Example trello cards provider for deepstream",
+  "main": "start-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasspiesser/deepstream-trello-provider-example"
+  },
+  "keywords": [
+    "deepstream.io"
+  ],
+  "author": "Thomas Spiesser",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomasspiesser/deepstream-trello-provider-example/issues"
+  },
+  "homepage": "https://github.com/thomasspiesser/deepstream-trello-provider-example#readme",
+  "dependencies": {
+    "deepstream.io": "latest",
+    "deepstream.io-client-js": "latest",
+    "node-trello": "^1.1.2"
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <script
+          type="text/javascript"
+          src="bower_components/deepstream.io-client-js/dist/deepstream.js">
+      </script>
+      <script
+          type="text/javascript"
+          src="bower_components/jquery/dist/jquery.min.js">
+      </script>
+  </head>
+    <body>
+      <div class="trello-cards-container">
+        <ul class="cards-list">
+          <li>Sorry, nothing here yet...</li>
+        </ul>
+      </div>
+
+        <script type="text/javascript">
+          /**
+          * Login to deepstream as Peter
+          */
+          var ds = deepstream( 'localhost:6020' ).login({ username: 'Peter'});
+          /**
+          * get the trello/cards record
+          */
+          var cardsRecord = ds.record.getRecord('trello/cards');
+          /**
+          * Update the UI whenever cards change
+          */
+          cardsRecord.subscribe( function( data ){
+            // add the card-names as li items to ul
+            var lis = [];
+
+            $.each(data.cards, function(i, card) {
+              lis.push('<li>' + card.name + '</li>');
+            });
+            // remove old card list
+            $('.cards-list').empty()
+            // show new cards list
+            $('.cards-list').append( lis.join('') );
+          });
+        </script>
+    </body>
+</html>
